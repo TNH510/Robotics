@@ -1,0 +1,151 @@
+Bài 1:
+P0 = T(0,0,l1).T(0,0,l2).T(0,0,l3).R(z,deta4).T(0,0,l4).R(z,deta5).R(z,deta6).T(l5,0,0).P6
+Kết quả tính toán bằng Matlab:
+Px = l5*(cos(t6)*(cos(t4)*cos(t5) - sin(t4)*sin(t5)) - sin(t6)*(cos(t4)*sin(t5) + cos(t5)*sin(t4)))
+Py = l5*(cos(t6)*(cos(t4)*sin(t5) + cos(t5)*sin(t4)) + sin(t6)*(cos(t4)*cos(t5) - sin(t4)*sin(t5)))
+Pz = l1 + l2 + l3 + l4
+
+Rút gọn:
+Px = l5*cos(t4+t5+t6)
+Py = l5*sin(t4+t5+t6)
+Pz = l1 + l2 + l3 + l4
+
+
+Bài 2:
+P0 = R(z,deta1).T(l2,0,l1+l3).R(z,deta2).T(l4,0,-l5).P3
+Kết quả tính toán bằng Matlab:
+Px = l2*cos(t1)
+Py = l2*sin(t1)
+Pz = l1 + l3
+
+
+Bài 3:
+P0 = R(z,deta1).T(l2,0,l1).R(z,deta2).T(l4,0,l3).R(z,deta3).T(l5,0,0).R(z,deta4).T(l7,l6,-l8).P4
+Kết quả tính toán bằng Matlab:
+Px = l4*(cos(t1)*cos(t2) - sin(t1)*sin(t2)) + l2*cos(t1) - l1*sin(t1) - l6*(cos(t4)*(cos(t3)*(cos(t1)*sin(t2) + cos(t2)*sin(t1)) + sin(t3)*(cos(t1)*cos(t2) - sin(t1)*sin(t2))) + sin(t4)*(cos(t3)*(cos(t1)*cos(t2) - sin(t1)*sin(t2)) - sin(t3)*(cos(t1)*sin(t2) + cos(t2)*sin(t1)))) + l7*(cos(t4)*(cos(t3)*(cos(t1)*cos(t2) - sin(t1)*sin(t2)) - sin(t3)*(cos(t1)*sin(t2) + cos(t2)*sin(t1))) - sin(t4)*(cos(t3)*(cos(t1)*sin(t2) + cos(t2)*sin(t1)) + sin(t3)*(cos(t1)*cos(t2) - sin(t1)*sin(t2)))) + l5*(cos(t3)*(cos(t1)*cos(t2) - sin(t1)*sin(t2)) - sin(t3)*(cos(t1)*sin(t2) + cos(t2)*sin(t1)))
+Py = l4*(cos(t1)*sin(t2) + cos(t2)*sin(t1)) + l1*cos(t1) + l2*sin(t1) + l6*(cos(t4)*(cos(t3)*(cos(t1)*cos(t2) - sin(t1)*sin(t2)) - sin(t3)*(cos(t1)*sin(t2) + cos(t2)*sin(t1))) - sin(t4)*(cos(t3)*(cos(t1)*sin(t2) + cos(t2)*sin(t1)) + sin(t3)*(cos(t1)*cos(t2) - sin(t1)*sin(t2)))) + l7*(cos(t4)*(cos(t3)*(cos(t1)*sin(t2) + cos(t2)*sin(t1)) + sin(t3)*(cos(t1)*cos(t2) - sin(t1)*sin(t2))) + sin(t4)*(cos(t3)*(cos(t1)*cos(t2) - sin(t1)*sin(t2)) - sin(t3)*(cos(t1)*sin(t2) + cos(t2)*sin(t1)))) + l5*(cos(t3)*(cos(t1)*sin(t2) + cos(t2)*sin(t1)) + sin(t3)*(cos(t1)*cos(t2) - sin(t1)*sin(t2)))
+Pz = l3 - l8                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                             
+
+
+Rút gọn:
+Px = l4*cos(t1+t2) + l2*cos(t1) - l1*sin(t1) - l6*sin(t1+t2+t3+t4) + l7*cos(t1+t2+t3+t4) + l5*cos(t1+t2+t3)
+Py = l4*sin(t1+t2) + l1*cos(t1) + l2*sin(t1) + l6*cos(t1+t2+t3+t4) + l7*sin(t1+t2+t3+t4) + l5*sin(t1+t2+t3)
+Pz = l3 - l8
+
+
+Bài 4:
+4a.
+P0 = T(0,0,l1).R(z,deta1).T(l2,0,-l3).R(z,deta2).T(l4,0,l5).P3
+Kết quả tính toán bằng Matlab:
+Px = l1 + l4*cos(t1+t2) + l2*cos(t1)
+Py = l2 + l4*sin(t1+t2) + l2*sin(t1)
+Pz = l5 - l3
+
+
+4b.
+P0 = T(l1,l2,0).R(z,deta1).T(0,0,l3).R(y,deta2).T(0,0,-l4-l5).R(y,deta4).T(l6,0,0).P7
+Kết quả tính toán bằng Matlab:
+Px = l1 - l6*(cos(t1)*sin(t2)*sin(t4) - cos(t1)*cos(t2)*cos(t4)) - cos(t1)*sin(t2)*(l4 + l5)
+Py = l2 - l6*(sin(t1)*sin(t2)*sin(t4) - cos(t2)*cos(t4)*sin(t1)) - sin(t1)*sin(t2)*(l4 + l5)
+Pz = l3 - l6*(cos(t2)*sin(t4) + cos(t4)*sin(t2)) - cos(t2)*(l4 + l5)
+
+
+Rút gọn:
+Px = l1 + l6*cos(t1)*cos(t2+t4) - cos(t1)*sin(t2)*(l4 + l5)
+Py = l2 + l6*sin(t1)*cos(t2+t4) - sin(t1)*sin(t2)*(l4 + l5)
+Pz = l3 - l6*sin(t2+t4) - cos(t2)*(l4 + l5)
+
+
+Bài 5:
+5a.
+P0 = R(y,deta1).T(0,0,-l1).R(y,deta3).T(0,0,-l2).P4
+Kết quả tính toán bằng Matlab:
+Px =  - l2*(cos(t1)*sin(t3) + cos(t3)*sin(t1)) - l1*sin(t1)
+Py =  0
+Pz =  - l2*(cos(t1)*cos(t3) - sin(t1)*sin(t3)) - l1*cos(t1)
+
+5b.
+P0 = R(x,deta2).T(0,0,-l1-cos(deta3)*l2).P2
+Kết quả tính toán bằng Matlab:
+Px =  0
+Py =  sin(t1)*(l1 + l2*cos(deta3))
+Pz =  -cos(t1)*(l1 + l2*cos(deta3))
+                                 
+
+Bài 6:
+P0 = T(0,0,l1).R(z,deta1).T(0,0,l3).R(x,deta2).T(0,l4,0).R(x,deta3).T(0,l5,0).R(x,deta4).T(0,l6,0).P9
+Kết quả tính toán bằng Matlab:
+
+Px = l1 + l5*(sin(t1)*sin(t2)*sin(t3) - cos(t2)*cos(t3)*sin(t1)) + l6*(cos(t4)*(sin(t1)*sin(t2)*sin(t3) - cos(t2)*cos(t3)*sin(t1)) + sin(t4)*(cos(t2)*sin(t1)*sin(t3) + cos(t3)*sin(t1)*sin(t2))) - l3*sin(t1) - l4*cos(t2)*sin(t1)
+Py = l3*cos(t1) - l6*(cos(t4)*(cos(t1)*sin(t2)*sin(t3) - cos(t1)*cos(t2)*cos(t3)) + sin(t4)*(cos(t1)*cos(t2)*sin(t3) + cos(t1)*cos(t3)*sin(t2))) - l5*(cos(t1)*sin(t2)*sin(t3) - cos(t1)*cos(t2)*cos(t3)) + l4*cos(t1)*cos(t2)
+Pz = l5*(cos(t2)*sin(t3) + cos(t3)*sin(t2)) + l4*sin(t2) + l6*(cos(t4)*(cos(t2)*sin(t3) + cos(t3)*sin(t2)) + sin(t4)*(cos(t2)*cos(t3) - sin(t2)*sin(t3)))
+ 
+Rút gọn:
+Px = l1 - l5*sin(t1)*cos(t2+t3) - l6*sin(t1)*cos(t1-t2-t3) - l3*sin(t1) - l4*cos(t2)*sin(t1)
+Py = l3*cos(t1) + l6*cos(t1)*cos(t4-t2-t3) + l5*cos(t1)*cos(t2+t3) + l4*cos(t1)*cos(t2)
+Pz = l5*sin(t2+t3) + l4*sin(t2) + l6*sin(t2+t3+t4)
+
+      
+Bài 7:
+P0 = T(0,0,l1).R(z,deta1).T(0,l4,l2).R(z,deta2).T(0,l5,l3).T(0,0,-l6).R(z,deta3).T(0,0,-l7).P6
+Kết quả tính toán bằng Matlab:
+
+Px = - l5*(cos(t1)*sin(t2) + cos(t2)*sin(t1)) - l4*sin(t1)
+Py =   l5*(cos(t1)*cos(t2) - sin(t1)*sin(t2)) + l4*cos(t1)
+Pz =   l1 + l2 + l3 - l6 - l7
+                                                     
+Rút gọn:
+
+Px = - l5*sin(t1+t2) - l4*sin(t1)
+Py =   l5*cos(t1+t2) + l4*cos(t1)
+Pz =   l1 + l2 + l3 - l6 - l7
+                                                   
+
+
+
+Bài 8:
+P0 = R(y,deta1).T(l1,0,0).T(0,l2,0).R(z,deta2).T(0,l3,0).R(z,deta3).T(0,l4,0).R(z,deta4).T(0,l5,0).R(y,deta5).T(l6,0,0).P11
+Kết quả tính toán bằng Matlab:
+
+Px = l1*cos(t1) - l5*(cos(t4)*(cos(t1)*cos(t2)*sin(t3) + cos(t1)*cos(t3)*sin(t2)) - sin(t4)*(cos(t1)*sin(t2)*sin(t3) - cos(t1)*cos(t2)*cos(t3))) - l6*(cos(t4)*(cos(t1)*cos(t2)*sin(t3) + cos(t1)*cos(t3)*sin(t2)) - sin(t4)*(cos(t1)*sin(t2)*sin(t3) - cos(t1)*cos(t2)*cos(t3))) - l4*(cos(t1)*cos(t2)*sin(t3) + cos(t1)*cos(t3)*sin(t2)) - l3*cos(t1)*sin(t2)
+Py = l2 + l4*(cos(t2)*cos(t3) - sin(t2)*sin(t3)) + l3*cos(t2) + l5*(cos(t4)*(cos(t2)*cos(t3) - sin(t2)*sin(t3)) - sin(t4)*(cos(t2)*sin(t3) + cos(t3)*sin(t2))) + l6*(cos(t4)*(cos(t2)*cos(t3) - sin(t2)*sin(t3)) - sin(t4)*(cos(t2)*sin(t3) + cos(t3)*sin(t2)))
+Pz = l4*(cos(t2)*sin(t1)*sin(t3) + cos(t3)*sin(t1)*sin(t2)) + l5*(cos(t4)*(cos(t2)*sin(t1)*sin(t3) + cos(t3)*sin(t1)*sin(t2)) - sin(t4)*(sin(t1)*sin(t2)*sin(t3) - cos(t2)*cos(t3)*sin(t1))) + l6*(cos(t4)*(cos(t2)*sin(t1)*sin(t3) + cos(t3)*sin(t1)*sin(t2)) - sin(t4)*(sin(t1)*sin(t2)*sin(t3) - cos(t2)*cos(t3)*sin(t1))) - l1*sin(t1) + l3*sin(t1)*sin(t2)
+ 
+Rút gọn:
+Px = l1*cos(t1) - l5*cos(t1)*sin(t2+t3+t4) - l6*cos(t1)*sin(t2+t3+t4) - l4*cos(t1)*sin(t2+t3) - l3*cos(t1)*sin(t2)
+Py = l2 + l4*cos(t2+t3) + l3*cos(t2) + l5*cos(t4+t2+t3) + l6*cos(t4+t2+t3)
+Pz = l4*sin(t1)*sin(t2+t3) + l5*sin(t1)*sin(t4+t2+t3) + l6*sin(t1)*sin(t4+t2+t3) - l1*sin(t1) + l3*sin(t1)*sin(t2)
+ 
+
+      
+
+Bài 9: 
+P0 = T(0,0,l1).R(z,deta1).T(0,l4,l2).R(z,deta2).T(0,l5,l3-l6-l7).R(z,deta3).P6
+Kết quả tính toán bằng Matlab:
+
+Px = - l5*(cos(t1)*sin(t2) + cos(t2)*sin(t1)) - l4*sin(t1)
+Py =   l5*(cos(t1)*cos(t2) - sin(t1)*sin(t2)) + l4*cos(t1)
+Pz =                                l1 + l2 + l3 - l6 - l7
+                                                   
+Rút gọn:
+Px = - l5*sin(t1+t2) - l4*sin(t1)
+Py =   l5*cos(t1+t2) + l4*cos(t1)
+Pz =   l1 + l2 + l3 - l6 - l7                                                    
+
+
+
+Bài 10:
+P0 = T(0,0,l1).R(z,deta1).T(0,0,l2).R(x,deta2).T(0,l3,0).R(x,deta3).T(0,l4,0).R(x,deta4).T(0,l5,l6).P9
+Kết quả tính toán bằng matlab:
+
+Px =  l4*(sin(t1)*sin(t2)*sin(t3) - cos(t2)*cos(t3)*sin(t1)) + l5*(cos(t4)*(sin(t1)*sin(t2)*sin(t3) - cos(t2)*cos(t3)*sin(t1)) + sin(t4)*(cos(t2)*sin(t1)*sin(t3) + cos(t3)*sin(t1)*sin(t2))) - l3*cos(t2)*sin(t1)
+Py =  l3*cos(t1)*cos(t2) - l5*(cos(t4)*(cos(t1)*sin(t2)*sin(t3) - cos(t1)*cos(t2)*cos(t3)) + sin(t4)*(cos(t1)*cos(t2)*sin(t3) + cos(t1)*cos(t3)*sin(t2))) - l4*(cos(t1)*sin(t2)*sin(t3) - cos(t1)*cos(t2)*cos(t3))
+Pz =             l1 + l2 + l4*(cos(t2)*sin(t3) + cos(t3)*sin(t2)) + l3*sin(t2) + l5*(cos(t4)*(cos(t2)*sin(t3) + cos(t3)*sin(t2)) + sin(t4)*(cos(t2)*cos(t3) - sin(t2)*sin(t3)))
+                                                                                                                                                                   
+Rút gọn:
+Px = -l4*sin(t1)*cos(t2+t3) + l5*sin(t1)*cos(t4-t2-t3) - l3*cos(t2)*sin(t1)
+Py =  l3*cos(t1)*cos(t2) + l5*cos(t1)*cos(t4-t2-t3) + l4*cos(t1)*cos(t2+t3)
+Pz =  l1 + l2 + l4*sin(t2+t3) + l3*sin(t2) + l5*sin(t4+t2+t3)
+
+                                                                                                                                                                           
+  
